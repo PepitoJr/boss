@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var N = parseInt(prompt("saisir la taille de votre tableau"));
+      while (N <= 10 || N >= 50) {
+        N = parseInt(
+          prompt(
+            "La taille de votre tableau doit etre compris entre 10 et 50:saisir de nouveau la taille de votre tableau"
+          )
+        );
+      }
+      var T = [N];
+      for (var i = 1; i <= 10; i++) {
+        T[i] = parseInt(prompt("Entrer element : " + i + " du tableau"));
+      }
+      var Max = (Min = T[1]);
+      for (var i = 2; i <= N; i++) {
+        if (Max < T[i]) {
+          Max = T[i];
+        }
+        if (Min > T[i]) {
+          Min = T[i];
+        }
+      }
+      document.write("La Valeur Maximale est : " + Max + "<br>");
+      document.write("La Valeur Minimale est : " + Min + "<br>");
+    </script>
+  </body>
+</html>

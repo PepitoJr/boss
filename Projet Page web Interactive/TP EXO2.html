@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function conjuguer(verbe) {
+        var terminaison = verbe.substring(verbe.length - 2);
+        var pronom = ["Je ", "Tu ", "Il/Elle ", "Nous ", "Vous ", "Ils/Elles "];
+        if (terminaison == "er") {
+          if (verbe[verbe.length - 3] == "g") {
+            var radical = verbe.substring(0, verbe.length - 2);
+            var fin = ["e ", "es ", "e ", "éons ", "ez ", "ent "];
+          } else if (verbe[verbe.length - 3] == "c") {
+            var fin = ["ce ", "ces ", "ce ", "çons ", "cez ", "cent "];
+            var radical = verbe.substring(0, verbe.length - 3);
+          } else {
+            var radical = verbe.substring(0, verbe.length - 2);
+            var fin = ["e ", "es ", "e ", "ons ", "ez ", "ent "];
+          }
+          document.write(
+            "<h2>Je conjugue le verbe " +
+              verbe +
+              "  au present de l'indicatif</h2>"
+          );
+          for (var i = 0; i <= 5; i++) {
+            document.write(pronom[i] + radical + fin[i] + "<br>");
+          }
+        } else {
+          document.write(verbe + " n'est pas un verbe du 1er groupe <br>");
+        }
+      }
+      var verbe = prompt("Entrer votre verbe");
+
+      conjuguer(verbe);
+    </script>
+  </body>
+</html>

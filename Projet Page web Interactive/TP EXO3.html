@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var moyenne = parseFloat(prompt("Entrer votre moyenne annuelle"));
+      while (moyenne < 0 || moyenne > 20) {
+         var moyenne = parseFloat(
+          prompt("Error : Veuillez entrer une moyenne valide entre 0 et 20")
+        );
+       }
+      if (moyenne >= 18) {
+        decision = "Excellent";
+      } else if (moyenne >= 16) {
+        decision = "Très Bien";
+      } else if (moyenne >= 14) {
+        decision = "Bien";
+      } else if (moyenne >= 12) {
+        decision = "Assez Bien";
+      } else if (moyenne >= 10) {
+        decision = "Passable";
+      } else {
+        decision = "Redouble";
+      }
+      document.write("Décision du conseil de classe : " + decision);
+    </script>
+  </body>
+</html>

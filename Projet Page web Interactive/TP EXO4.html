@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vérification de palindrome</title>
+    <script>
+      function isPalindrome(chaine) {
+        bool = true;
+        var chaine2 = chaine.toLowerCase();
+        var n = chaine2.length / 2;
+        for (i = 0; i < n; i++) {
+          if (chaine2[i] != chaine2[chaine2.length - 1 - i]) {
+            bool = false;
+          }
+        }
+
+        return bool;
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Vérification de palindrome</h1>
+    <script>
+      chaine = prompt("Entrer une chaine");
+      var palin = isPalindrome(chaine);
+      document.write(palin + "<br>");
+      if (palin) {
+        document.write(chaine + "   est  un palindrome <br>");
+      } else {
+        document.write(chaine + "  n'est pas  un palindrome <br>");
+      }
+    </script>
+  </body>
+</html>
